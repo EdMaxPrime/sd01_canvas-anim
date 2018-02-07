@@ -26,4 +26,12 @@ var animationLoop = function() {
     requestID = window.requestAnimationFrame(drawCircle);
 }
 
-window.requestAnimationFrame(animationLoop);
+var startListener = function() {
+    requestID = window.requestAnimationFrame(animationLoop);
+    rate = 1;
+}
+
+var stopListener = function() {
+    window.cancelAnimationFrame(requestID);
+    rate = 0;
+}
